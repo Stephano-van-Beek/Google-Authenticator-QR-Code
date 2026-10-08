@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Secure Login</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="card">
+    <h1>Secure Login</h1>
+    <p id="msg" class="msg"></p>
+
+    <!-- Login step 1 -->
+    <form id="loginForm">
+      <input id="lu" placeholder="Username" required autocomplete="username">
+      <input id="lp" type="password" placeholder="Password" required autocomplete="current-password">
+      <button>Log in</button>
+      <a href="#" id="toReg">Create account</a>
+    </form>
+
+    <!-- Login step 2: Google Authenticator code -->
+    <form id="codeForm" hidden>
+      <p>Enter the 6-digit code from Google Authenticator.</p>
+      <input id="lc" class="code" inputmode="numeric" maxlength="6" pattern="\d{6}" placeholder="123456" required>
+      <button>Verify</button>
+    </form>
+
+    <!-- Register -->
+    <form id="regForm" hidden>
+      <input id="ru" placeholder="Choose username" required>
+      <input id="rp" type="password" placeholder="Password (8+ characters)" required minlength="8">
+      <button>Register</button>
+      <a href="#" id="toLogin">Back to login</a>
+    </form>
+
+    <!-- Setup: scan QR -->
+    <form id="setupForm" hidden>
+      <p>Scan this QR code with the Google Authenticator app, then enter the code it shows.</p>
+      <img id="qr" alt="QR code">
+      <small>Or enter manually: <code id="secret"></code></small>
+      <input id="sc" class="code" inputmode="numeric" maxlength="6" pattern="\d{6}" placeholder="123456" required>
+      <button>Confirm</button>
+    </form>
+
+    <!-- Logged in -->
+    <section id="welcome" hidden>
+      <h2 id="hello"></h2>
+      <button id="logout">Log out</button>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

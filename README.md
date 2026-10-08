@@ -1,5 +1,20 @@
-# Google-Authenticator-QR-Code
-When you log in, you’ll receive a QR code (by email or on the site). Scan it with the Google Authenticator app, which will generate time-based codes. Enter these codes on the website whenever you log in to keep your account secure.
+# Google Authenticator Login
 
-# Full Description Google Authenticator QR Code 
-When you log in to a website that uses Google Authenticator for security, you are taken to a page where you must set up two-factor authentication (2FA). The website sends you a QR code (sometimes by email, or it may appear directly on the setup page). You need to scan this QR code with the Google Authenticator app on your phone. After scanning, the app will start generating time-based codes (numbers) that you must enter on the website each time you log in. This adds an extra layer of security to your account.
+A website login page that requires a Google Authenticator code to log in.
+
+## How it works
+1. **Register**: choose a username and password. The site shows a QR code.
+2. **Scan** the QR code with the Google Authenticator app. The app generates a new 6-digit code every 30 seconds.
+3. **Confirm** by entering the current code once to switch 2FA on.
+4. **Log in**: enter username and password, then the 6-digit code from the app.
+
+## Run it
+```bash
+npm install
+npm start
+```
+Open http://localhost:3000
+
+## Notes
+- Users are stored in memory (lost on restart). Use a database for real use.
+- Use HTTPS in production.
