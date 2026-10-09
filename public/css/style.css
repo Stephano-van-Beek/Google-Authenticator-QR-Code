@@ -1,0 +1,55 @@
+/* Makes element widths include their padding and borders. */
+* { box-sizing: border-box; }
+
+/* Centers the page card and adds the blue page background. */
+body {
+  margin: 0; min-height: 100vh; display: grid; place-items: center;
+  font-family: system-ui, sans-serif;
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+}
+
+/* Styles the white card that holds each page's content. */
+.card {
+  width: 100%; max-width: 860px; padding: 32px; background: #fff;
+  border-radius: 14px; box-shadow: 0 10px 30px rgba(0,0,0,.3); text-align: center;
+}
+
+/* Styles the forms and fields used for sign-in and registration. */
+h1 { margin-top: 0; }
+.auth-columns { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px; text-align: left; }
+.auth-columns section + section { border-left: 1px solid #ddd; padding-left: 32px; }
+.auth-columns h2 { margin-top: 0; text-align: center; }
+.form-help { min-height: 42px; font-size: 14px; }
+form { display: flex; flex-direction: column; gap: 12px; }
+input {
+  padding: 12px; font-size: 16px; border: 1px solid #ccc; border-radius: 8px;
+}
+input.code { text-align: center; letter-spacing: 8px; font-size: 22px; }
+
+/* Styles the main action buttons. */
+button {
+  padding: 12px; font-size: 16px; border: 0; border-radius: 8px;
+  background: #2a5298; color: #fff; cursor: pointer;
+}
+button:hover { background: #1e3c72; }
+
+/* Styles links, QR images, and messages shown to the employee. */
+a { color: #2a5298; font-size: 14px; }
+img { width: 200px; height: 200px; margin: 0 auto; }
+code { word-break: break-all; }
+.msg { min-height: 20px; color: #c0392b; font-size: 14px; }
+.msg.ok { color: #27ae60; }
+
+/* Gives the protected portal a focused success message in the middle of the page. */
+.portal-card { max-width: 500px; padding: 48px 32px; }
+.portal-icon {
+  width: 56px; height: 56px; margin: 0 auto 20px; border-radius: 50%;
+  display: grid; place-items: center; background: #27ae60; color: #fff;
+  font-size: 32px; font-weight: 700;
+}
+.portal-greeting { font-size: 20px; font-weight: 600; }
+.portal-message { margin: 16px 0 28px; color: #555; }
+@media (max-width: 650px) {
+  .auth-columns { grid-template-columns: 1fr; }
+  .auth-columns section + section { border-left: 0; border-top: 1px solid #ddd; padding: 24px 0 0; }
+}

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Set Up Google Authenticator</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <main class="card">
+    <h1>Set Up Google Authenticator</h1>
+    <p id="msg" class="msg"></p>
+    <!-- This form is available only through the one-time link in the registration email. -->
+    <form id="setupForm" hidden>
+      <p>Scan this QR code with Google Authenticator, then enter its current code.</p>
+      <img id="qr" alt="QR code for Google Authenticator">
+      <small>Or enter manually: <code id="secret"></code></small>
+      <input id="sc" class="code" inputmode="numeric" maxlength="6" pattern="\d{6}" placeholder="123456" required>
+      <button>Finish setup</button>
+    </form>
+  </main>
+  <script src="../js/setup.js"></script>
+</body>
+</html>

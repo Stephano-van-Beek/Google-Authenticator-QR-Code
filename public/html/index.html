@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Employee Portal</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <!-- This content stays hidden until the server accepts the employee session. -->
+  <main id="portal" class="card portal-card" hidden>
+    <p class="portal-icon" aria-hidden="true">✓</p>
+    <h1>Congrats, you made it!</h1>
+    <p id="hello" class="portal-greeting"></p>
+    <p id="announcement" class="portal-message"></p>
+    <button id="logout">Log out</button>
+  </main>
+  <script src="../js/portal.js"></script>
+</body>
+</html>

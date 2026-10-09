@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Employee Sign In</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <main class="card">
+    <h1>Employee Portal</h1>
+    <!-- Shows errors and success messages from the sign-in steps. -->
+    <p id="msg" class="msg"></p>
+
+    <div class="auth-columns">
+      <!-- Registration only creates the account and sends a setup email. -->
+      <section>
+        <h2>Register</h2>
+        <p class="form-help">We will email your Google Authenticator setup link.</p>
+        <form id="regForm">
+          <input id="ru" placeholder="Username" required autocomplete="username">
+          <input id="re" type="email" placeholder="Work email" required autocomplete="email">
+          <input id="rp" type="password" placeholder="Password (8+ characters)" required minlength="8" autocomplete="new-password">
+          <button>Create account</button>
+        </form>
+      </section>
+
+      <!-- Login requires the employee's existing Authenticator code. -->
+      <section>
+        <h2>Log in</h2>
+        <p class="form-help">Use the current six-digit code from Google Authenticator.</p>
+        <form id="loginForm">
+          <input id="lu" placeholder="Username" required autocomplete="username">
+          <input id="lp" type="password" placeholder="Password" required autocomplete="current-password">
+          <input id="lc" class="code" inputmode="numeric" maxlength="6" pattern="\d{6}" placeholder="123456" required>
+          <button>Log in</button>
+        </form>
+      </section>
+    </div>
+  </main>
+  <script src="../js/app.js"></script>
+</body>
+</html>
